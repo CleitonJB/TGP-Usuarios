@@ -1,0 +1,3 @@
+# Remover pastas e arquivos desnecessários padrão do NodeJS
+/node_modules
+package-lock.json
