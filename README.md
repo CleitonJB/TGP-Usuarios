@@ -2,15 +2,15 @@
 Trabalho referente à matéria "Gerência de Projetos" do Instituto Federal Fluminense.
 
 **Desenvolvido por:**
-| Nome                    | GitHub |
-|-------------------------|------------------------|
+| Nome                    | GitHub                       |
+|-------------------------|------------------------------|
 | Cleiton de Jesus Braga  | https://github.com/CleitonJB |
 | Hugo Nascimento Ribeiro | https://github.com/Nrhugo235 |
-| Lucas Rocha Rangel      | https://github.com/Lucsesen |
+| Lucas Rocha Rangel      | https://github.com/Lucsesen  |
 
 ## Diretórios
-| **/register** | Pasta       | Descrição |
-|-------------|-------------|
+| Pasta       | Descrição                                        |
+|-------------|--------------------------------------------------|
 | **/server** | Pasta para as APIs do projeto **TGP - Usuários** |
 
 ## Executar projeto - Backend
