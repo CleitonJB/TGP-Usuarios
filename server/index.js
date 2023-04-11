@@ -1,10 +1,17 @@
 const express = require('express');
 
+const db = require('./src/database/index');
+
 const SERVER_PORT = 3000;
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+new db();
+
 app.get('/', (resquest, response) => {
-    response.send('salve!');
+    response.send('Na teoria, está tudo funcionando...!');
 });
 
 app.listen(SERVER_PORT, () => {
