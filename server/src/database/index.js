@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 
-const db = class DataBase {
+class DataBase {
     constructor() {
         this.init();
     }
 
     init() {
+        console.log('\nConectando ao banco de dados...\n');
+
         mongoose.connect('mongodb+srv://adm:admin@cluster0.melvy.mongodb.net/tgp_usuarios?retryWrites=true&w=majority');
 
         mongoose.connection.on('connected', () => {
@@ -18,4 +20,4 @@ const db = class DataBase {
     }
 }
 
-module.exports = db;
+module.exports = DataBase;

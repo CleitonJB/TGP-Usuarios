@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-new db();
+const database = new db(); 
 
 app.get('/', (resquest, response) => {
     response.send('Na teoria, está tudo funcionando...!');
