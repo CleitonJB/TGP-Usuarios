@@ -92,7 +92,7 @@ exports.update = async (request, response) => {
         .catch((error) => {
             return response.status(400).json({ 
                 status:  'ERROR', 
-                message: `Erro ao excluir usuário: ${error}`,
+                message: `Erro ao atualizar usuário: ${error}`,
                 data:    null
             });
         });
