@@ -9,7 +9,7 @@ Trabalho referente à matéria "Gerência de Projetos" do Instituto Federal Flum
 | Lucas Rocha Rangel      | https://github.com/Lucsesen |
 
 ## Diretórios
-| Pasta       | Descrição |
+| **/register** | Pasta       | Descrição |
 |-------------|-------------|
 | **/server** | Pasta para as APIs do projeto **TGP - Usuários** |
 
@@ -23,3 +23,12 @@ cd server
 ```
 node index.js
 ```
+
+## Rotas
+| Rota          | Método     | Descrição                                           |
+|---------------|------------|-----------------------------------------------------|
+| **/register** | **POST**   | Cadastrar um novo usuário (Register)                |
+| **/login**    | **GET**    | Verificar a existência de um usuário (Login)        |
+| **/getAll**   | **GET**    | Obter uma listagem de todos os usuários cadastrados |
+| **/update**   | **PUT**    | Atualizar os dados de um usuário cadastrado         |
+| **/delete**   | **DELETE** | Excluir os dados de um usuário cadastrado           |
