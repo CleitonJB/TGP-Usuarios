@@ -24,6 +24,17 @@ cd server
 node index.js
 ```
 
+## Executar projeto - Frontend
+
+##### 1) Entrar na pasta do projeto
+```
+cd frontend
+```
+##### 2) Executar o projeto
+```
+ng serve -o
+```
+
 ## Rotas
 | Classe         | Rota                       | Método     | Descrição                                                 |
 |----------------|----------------------------|------------|-----------------------------------------------------------|
