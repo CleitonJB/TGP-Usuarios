@@ -1,6 +1,6 @@
 const RoleModel = require('../models/Role');
 
-//* Cadastro
+//* Cadastrar
 exports.register = async (request, response) => {
     const roleData = request.body;
 
@@ -21,7 +21,7 @@ exports.register = async (request, response) => {
         });
 }
 
-//* Login
+//* Encontrar
 exports.find = async (request, response) => {
     const roleData = request.body;
 
