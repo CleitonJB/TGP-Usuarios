@@ -27,7 +27,7 @@ app.get('/', (resquest, response) => {
 
 //* USER CRUD
 app.post('/user/register', userController.register);
-app.get('/user/login', userController.find);
+app.post('/user/login', userController.find);
 app.get('/user/getAll', userController.findAll);
 app.put('/user/update', userController.update);
 app.delete('/user/delete', userController.delete);
