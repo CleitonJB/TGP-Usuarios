@@ -1,7 +1,7 @@
 <div id="app-page">
   <!--* Toolbar -->
   <mat-toolbar id="main-toolbar">
-    <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <button (click)="drawer.toggle()" mat-icon-button aria-label="Menu icon">
       <mat-icon>menu</mat-icon>
     </button>
     <span>My App</span>
@@ -15,7 +15,7 @@
     <!--* Espaçamento -->
     <span class="example-spacer"></span>
 
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <button mat-icon-button aria-label="Profile icon">
       <mat-icon>person</mat-icon>
     </button>
     <span>dashdjakdgka</span>
@@ -25,7 +25,29 @@
   <mat-drawer-container class="example-container" autosize>
     <!--* Side Menu -->
     <mat-drawer #drawer class="example-sidenav" mode="side">
-      <p>Auto-resizing sidenav</p>
+      <!--* Perfil -->
+      <button (click)="navigateTo('/profile')" mat-icon-button class="menu-item" aria-label="Profile icon">
+        <mat-icon>person</mat-icon>
+        <span>Perfil</span>
+      </button>
+
+      <!--* Roles -->
+      <button (click)="navigateTo('/role')" mat-icon-button class="menu-item" aria-label="Role icon">
+        <mat-icon>person</mat-icon>
+        <span>Roles</span>
+      </button>
+
+      <!--* Funcionalidades -->
+      <button (click)="navigateTo('/funcionalidade')" mat-icon-button class="menu-item" aria-label="Funcionalidades icon">
+        <mat-icon>person</mat-icon>
+        <span>Funcionalidades</span>
+      </button>
+
+      <!--* Autorizações -->
+      <button (click)="navigateTo('/autorizacao')" mat-icon-button class="menu-item" aria-label="Autorizações icon">
+        <mat-icon>person</mat-icon>
+        <span>Autorizações</span>
+      </button>
     </mat-drawer>
   
     <!--* Main content -->
