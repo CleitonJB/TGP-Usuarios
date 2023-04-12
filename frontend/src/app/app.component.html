@@ -4,23 +4,23 @@
     <button (click)="drawer.toggle()" mat-icon-button aria-label="Menu icon">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>My App</span>
+    <span>TGP</span>
 
     <!--* Espaçamento -->
     <span class="example-spacer"></span>
     
     <!--* Cumprimento -->
-    <span>Bom bom bom, asdagisdga</span>
+    <span *ngIf="currentUser?.id">Bom bom bom, {{ currentUser.name }}</span>
 
     <!--* Espaçamento -->
     <span class="example-spacer"></span>
 
-    <button mat-icon-button aria-label="Profile icon">
-      <mat-icon>person</mat-icon>
+    <button *ngIf="currentUser?.id" (click)="logout()" mat-icon-button aria-label="Profile icon">
+      <mat-icon>logout</mat-icon>
+      <span>Sair</span>
     </button>
-    <span>dashdjakdgka</span>
   </mat-toolbar>
-  
+
   <!--* Page content -->
   <mat-drawer-container class="example-container" autosize>
     <!--* Side Menu -->
