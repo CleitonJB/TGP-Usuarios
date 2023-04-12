@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 
 const db = require('./src/database/index');
 
@@ -10,6 +11,11 @@ const autorizacaoController = require('./src/controllers/AutorizacaoController')
 const SERVER_PORT = 3000;
 const app = express();
 
+const CORSOptions = {
+    origin: '*'
+};
+
+app.use(cors(CORSOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
