@@ -1,1 +1,36 @@
-<router-outlet></router-outlet>
+<div id="app-page">
+  <!--* Toolbar -->
+  <mat-toolbar id="main-toolbar">
+    <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+
+    <!--* Espaçamento -->
+    <span class="example-spacer"></span>
+    
+    <!--* Cumprimento -->
+    <span>Bom bom bom, asdagisdga</span>
+
+    <!--* Espaçamento -->
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>person</mat-icon>
+    </button>
+    <span>dashdjakdgka</span>
+  </mat-toolbar>
+  
+  <!--* Page content -->
+  <mat-drawer-container class="example-container" autosize>
+    <!--* Side Menu -->
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <p>Auto-resizing sidenav</p>
+    </mat-drawer>
+  
+    <!--* Main content -->
+    <div class="example-sidenav-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-container>
+</div>

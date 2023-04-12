@@ -4,6 +4,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 import { AppComponent } from './app.component';
 import { RoleComponent } from './components/role/role.component';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -21,6 +25,9 @@ import { AutorizacaoComponent } from './components/autorizacao/autorizacao.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
     BrowserAnimationsModule
   ],
   providers: [],

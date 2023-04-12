@@ -1,0 +1,29 @@
+#app-page {
+    width: 100vw;
+    height: 100vh;
+}
+
+#main-toolbar {
+    height: 5vh;
+}
+
+.example-container {
+    width: 100vw;
+    height: 95vh;
+}
+  
+.example-sidenav {
+    width: 15vw;
+    min-width: 15vw;
+    max-width: 15vw;
+    box-sizing: border-box;
+}  
+
+.example-sidenav-content {
+    height: 100%;
+    background-color: lightgray;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
