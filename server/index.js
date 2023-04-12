@@ -1,7 +1,9 @@
 const express = require('express');
 
 const db = require('./src/database/index');
+
 const userController = require('./src/controllers/UserController');
+const roleController = require('./src/controllers/RoleController');
 
 const SERVER_PORT = 3000;
 const app = express();
@@ -16,11 +18,17 @@ app.get('/', (resquest, response) => {
 });
 
 //* USER CRUD
-app.post('/register', userController.register);
-app.get('/login', userController.find);
-app.get('/getAll', userController.findAll);
-app.put('/update', userController.update);
-app.delete('/delete', userController.delete);
+app.post('/user/register', userController.register);
+app.get('/user/login', userController.find);
+app.get('/user/getAll', userController.findAll);
+app.put('/user/update', userController.update);
+app.delete('/user/delete', userController.delete);
+//* ROLE CRUD
+app.post('/role/create', roleController.register);
+app.get('/role/get', roleController.find);
+app.get('/role/getAll', roleController.findAll);
+app.put('/role/update', roleController.update);
+app.delete('/role/delete', roleController.delete);
 
 app.listen(SERVER_PORT, () => {
     console.log(`Server rodando em http://www.localhost:${SERVER_PORT}`);
