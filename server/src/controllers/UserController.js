@@ -102,7 +102,7 @@ exports.update = async (request, response) => {
 exports.delete = async (request, response) => {
     const userData = request.body;
 
-    await UserModel.deleteOne({ id: userData.id, name: userData.name, email: userData.email, role: userData.role })
+    await UserModel.deleteOne({ id: userData.id })
         .then((deletedUser) => {
             if(deletedUser.deletedCount > 0) {
                 return response.status(200).json({ 
