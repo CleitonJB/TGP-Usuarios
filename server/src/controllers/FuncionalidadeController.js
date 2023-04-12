@@ -100,9 +100,9 @@ exports.update = async (request, response) => {
 
 //* Deletar
 exports.delete = async (request, response) => {
-    const funcionalidadeData = request.body;
+    const funcionalidadeID = request.url.replace("/funcionalidade/delete/", "");
 
-    await FuncionalidadeModel.deleteOne({ id: funcionalidadeData.id })
+    await FuncionalidadeModel.deleteOne({ id: funcionalidadeID })
         .then((deletedFuncionalidade) => {
             if(deletedFuncionalidade.deletedCount > 0) {
                 return response.status(200).json({ 

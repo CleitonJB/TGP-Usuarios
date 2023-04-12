@@ -100,9 +100,9 @@ exports.update = async (request, response) => {
 
 //* Deletar
 exports.delete = async (request, response) => {
-    const roleData = request.body;
+    const roleID = request.url.replace("/role/delete/", "");
 
-    await RoleModel.deleteOne({ id: roleData.id })
+    await RoleModel.deleteOne({ id: roleID })
         .then((deletedRole) => {
             if(deletedRole.deletedCount > 0) {
                 return response.status(200).json({ 

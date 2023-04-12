@@ -100,9 +100,9 @@ exports.update = async (request, response) => {
 
 //* Deletar
 exports.delete = async (request, response) => {
-    const autorizacaoData = request.body;
+    const autorizacaoID = request.url.replace("/autorizacao/delete/", "");
 
-    await AutorizacaoModel.deleteOne({ id: autorizacaoData.id })
+    await AutorizacaoModel.deleteOne({ id: autorizacaoID })
         .then((deletedAutorizacao) => {
             if(deletedAutorizacao.deletedCount > 0) {
                 return response.status(200).json({ 

@@ -37,21 +37,21 @@ app.post('/role/create', roleController.register);
 app.get('/role/get', roleController.find);
 app.get('/role/getAll', roleController.findAll);
 app.put('/role/update', roleController.update);
-app.delete('/role/delete', roleController.delete);
+app.delete('/role/delete/:id', roleController.delete);
 
 //* FUNCIONALIDADE CRUD
 app.post('/funcionalidade/create', funcionalidadeController.register);
 app.get('/funcionalidade/get', funcionalidadeController.find);
 app.get('/funcionalidade/getAll', funcionalidadeController.findAll);
 app.put('/funcionalidade/update', funcionalidadeController.update);
-app.delete('/funcionalidade/delete', funcionalidadeController.delete);
+app.delete('/funcionalidade/delete/:id', funcionalidadeController.delete);
 
 //* AUTORIZACAO CRUD
 app.post('/autorizacao/create', autorizacaoController.register);
 app.get('/autorizacao/get', autorizacaoController.find);
 app.get('/autorizacao/getAll', autorizacaoController.findAll);
 app.put('/autorizacao/update', autorizacaoController.update);
-app.delete('/autorizacao/delete', autorizacaoController.delete);
+app.delete('/autorizacao/delete/:id', autorizacaoController.delete);
 
 app.listen(SERVER_PORT, () => {
     console.log(`Server rodando em http://www.localhost:${SERVER_PORT}`);
