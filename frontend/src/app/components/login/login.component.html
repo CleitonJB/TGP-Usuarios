@@ -1,1 +1,32 @@
-<p>login works!</p>
+<div class="login-page">
+    <div class="login-content">
+        <h1>Login</h1>
+        <br><br>
+        <h3>Prazer em vê-lo(a) no TGP novamente!</h3><br>
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" formControlName="password">
+            </div>
+
+            <div class="text-center">
+                <a href="login">Não lembra a sua senha?</a>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">
+                    <span>Entrar</span>
+                </button>
+            </div>
+
+            <div class="text-center">
+                <a href="register">Não possui uma conta? Vamos começar!</a>
+            </div>
+        </form>
+    </div>
+</div>
