@@ -9,9 +9,10 @@ Trabalho referente à matéria "Gerência de Projetos" do Instituto Federal Flum
 | Lucas Rocha Rangel      | https://github.com/Lucsesen  |
 
 ## Diretórios
-| Pasta       | Descrição                                        |
-|-------------|--------------------------------------------------|
-| **/server** | Pasta para as APIs do projeto **TGP - Usuários** |
+| Pasta         | Descrição                                                     |
+|---------------|---------------------------------------------------------------|
+| **/server**   | Pasta para as APIs do projeto **TGP - Usuários**              |
+| **/frontend** | Pasta para a aplicação frontend do projeto **TGP - Usuários** |
 
 ## Executar projeto - Backend
 
