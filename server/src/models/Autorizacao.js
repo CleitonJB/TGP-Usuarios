@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const User = new Schema({
+const Autorizacao = new Schema({
     id: {
         type: Number,
         required: true
@@ -18,5 +18,5 @@ const User = new Schema({
     }
 }, { collection: 'autorizacao' });
 
-const UserModel = mongoose.model('Autorizacao', User);
-module.exports = UserModel;
+const AutorizacaoModel = mongoose.model('Autorizacao', Autorizacao);
+module.exports = AutorizacaoModel;
