@@ -10,7 +10,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppComponent } from './app.component';
 import { RoleComponent } from './components/role/role.component';
+import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { RegisterComponent } from './components/register/register.component';
 import { FuncionalidadeComponent } from './components/funcionalidade/funcionalidade.component';
 import { AutorizacaoComponent } from './components/autorizacao/autorizacao.component';
 
@@ -21,6 +23,8 @@ import { AutorizacaoComponent } from './components/autorizacao/autorizacao.compo
     RoleComponent,
     FuncionalidadeComponent,
     AutorizacaoComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
