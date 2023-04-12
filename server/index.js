@@ -30,7 +30,7 @@ app.post('/user/register', userController.register);
 app.post('/user/login', userController.find);
 app.get('/user/getAll', userController.findAll);
 app.put('/user/update', userController.update);
-app.delete('/user/delete', userController.delete);
+app.delete('/user/delete/:id', userController.delete);
 
 //* ROLE CRUD
 app.post('/role/create', roleController.register);
