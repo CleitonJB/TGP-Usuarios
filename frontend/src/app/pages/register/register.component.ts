@@ -5,6 +5,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { User } from 'src/app/models/User';
 import { RequestResponseVM } from 'src/app/models/ResponseRequestVM';
 
+import { UserService } from 'src/app/core/services/user/user.service';
 import { RegisterService } from './register.service';
 
 @Component({
@@ -18,6 +19,7 @@ export class RegisterComponent implements OnInit {
   
   constructor(
     private router: Router,
+    private userService: UserService,
     private registerService: RegisterService
   ) { }
 
@@ -43,7 +45,7 @@ export class RegisterComponent implements OnInit {
     this.registerService.register(this.formGroup.getRawValue() as User).subscribe({
       next: (userData: RequestResponseVM) => {
         alert(userData.message);
-        localStorage.setItem('user', JSON.stringify(JSON.parse(JSON.stringify(userData.data)))); 
+        this.userService.setGlobalUser(userData.data); 
         this.navigateTo('profile');
       },
       error: (error: any) => {
