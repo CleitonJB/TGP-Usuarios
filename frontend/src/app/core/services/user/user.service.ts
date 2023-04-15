@@ -27,11 +27,25 @@ export class UserService {
     }
   }
 
+  public removeGlobalUser(): void {
+    try {
+      this.localStorageService.removeUser();
+      this.removeUser();
+    } catch (error) {
+      console.error("Erro ao remover Usuário: ", error);
+      alert("Erro ao remover Usuário :(");
+    }
+  }
+
   public setUser(newUser: User | null): void {
     this.$currentUser.next(newUser);
   }
 
   public getUser(): BehaviorSubject<User | null> {
-    return new BehaviorSubject<User | null>(this.$currentUser.value);
+    return this.$currentUser;
+  }
+
+  public removeUser(): void {
+    this.$currentUser.next(null);
   }
 }

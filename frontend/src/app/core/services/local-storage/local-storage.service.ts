@@ -17,7 +17,7 @@ export class LocalStorageService {
   }
 
   private getStorageData(key: string): string | null {
-    return localStorage.getItem(key);
+    return JSON.parse(localStorage.getItem(key) as string);
   }
 
   private removeDataAtStorage(key: string): void {

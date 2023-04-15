@@ -4,6 +4,7 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTr
 
 import { User } from 'src/app/models/User';
 
+import { UserService } from '../../services/user/user.service';
 import { LocalStorageService } from '../../services/local-storage/local-storage.service';
 
 @Injectable({
@@ -12,15 +13,20 @@ import { LocalStorageService } from '../../services/local-storage/local-storage.
 export class AuthGuard implements CanActivate {
   constructor(
     private router: Router,
+    private userService: UserService,
     private localStorageService: LocalStorageService
   ) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const existUser: User | null = this.localStorageService.getUser();
 
-    console.log("user: ", existUser);
+    return (!!existUser) ? this.setCurrentUser(existUser) : this.navigateToRegister();
+  }
 
-    return (!!existUser) ? true : this.navigateToRegister();
+  private setCurrentUser(user: User): boolean {
+    console.log("user (Auth): ", user);
+    this.userService.setGlobalUser(user);
+    return true;
   }
 
   private navigateToRegister(): boolean {

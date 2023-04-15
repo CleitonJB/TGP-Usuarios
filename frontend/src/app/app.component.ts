@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import { User } from './models/User';
+import { UserService } from './core/services/user/user.service';
 
 @Component({
   selector: 'app-root',
@@ -11,20 +13,37 @@ import { User } from './models/User';
 export class AppComponent {
 
   public showFiller: boolean = false;
-  public currentUser!: User;
+  public currentUser!: User | null;
 
-  constructor(private router: Router) {}
+  private userSubscription: Subscription | null = null;
+
+  constructor(
+    private router: Router,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
     this.getUser();
   }
 
-  private getUser(): void{
-    this.currentUser = JSON.parse(localStorage.getItem('user') as string);
+  ngOnDestroy(): void {
+    if(this.userSubscription) this.userSubscription.unsubscribe();    
+  }
+
+  private getUser(): void {
+    this.userSubscription = this.userService.getUser().subscribe({
+      next: (userData: User | null) => {
+        console.log("Usuário atualizado: ", userData);
+        this.currentUser = userData;
+      },
+      error: (error: any) => {
+        console.error("Erro ao obter usuário atual: ", error);
+      }
+    });
   }
 
   public logout(): void {
-    localStorage.removeItem('user');
+    this.userService.removeGlobalUser();
     this.navigateTo('login');
   }
 

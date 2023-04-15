@@ -1,7 +1,7 @@
 <div id="app-page">
   <!--* Toolbar -->
   <mat-toolbar id="main-toolbar">
-    <button [disabled]="!currentUser?.id" (click)="drawer.toggle()" mat-icon-button aria-label="Menu icon">
+    <button [disabled]="currentUser == null" (click)="drawer.toggle()" mat-icon-button aria-label="Menu icon">
       <mat-icon>menu</mat-icon>
     </button>
     <span>TGP</span>
@@ -10,12 +10,12 @@
     <span class="example-spacer"></span>
     
     <!--* Cumprimento -->
-    <span *ngIf="currentUser?.id">Bom bom bom, {{ currentUser.name }}</span>
+    <span *ngIf="currentUser != null">Bom bom bom, {{ currentUser.name }}</span>
 
     <!--* Espaçamento -->
     <span class="example-spacer"></span>
 
-    <button *ngIf="currentUser?.id" (click)="logout()" mat-icon-button aria-label="Profile icon">
+    <button *ngIf="currentUser != null" (click)="logout()" mat-icon-button aria-label="Profile icon">
       <mat-icon>logout</mat-icon>
       <span>Sair</span>
     </button>
