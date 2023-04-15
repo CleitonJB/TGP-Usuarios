@@ -1,7 +1,7 @@
 <div id="app-page">
   <!--* Toolbar -->
   <mat-toolbar id="main-toolbar">
-    <button (click)="drawer.toggle()" mat-icon-button aria-label="Menu icon">
+    <button [disabled]="!currentUser?.id" (click)="drawer.toggle()" mat-icon-button aria-label="Menu icon">
       <mat-icon>menu</mat-icon>
     </button>
     <span>TGP</span>
