@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AuthGuard } from './core/guards/auth/auth.guard';
+import { LoginGuard } from './pages/login/guard/login.guard';
+
 import { RoleComponent } from './pages/role/role.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
@@ -20,6 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
+    canActivate: [LoginGuard],
     component: LoginComponent
   },
   {
@@ -28,18 +32,22 @@ const routes: Routes = [
   },
   {
     path: 'profile',
+    canActivate: [AuthGuard],
     component: ProfileComponent
   },
   {
     path: 'role',
+    canActivate: [AuthGuard],
     component: RoleComponent
   },
   {
     path: 'funcionalidade',
+    canActivate: [AuthGuard],
     component: FuncionalidadeComponent
   },
   {
     path: 'autorizacao',
+    canActivate: [AuthGuard],
     component: AutorizacaoComponent
   },
 ];
