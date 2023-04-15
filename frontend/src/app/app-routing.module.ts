@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RoleComponent } from './components/role/role.component';
-import { LoginComponent } from './components/login/login.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { RegisterComponent } from './components/register/register.component';
-import { AutorizacaoComponent } from './components/autorizacao/autorizacao.component';
-import { FuncionalidadeComponent } from './components/funcionalidade/funcionalidade.component';
+import { RoleComponent } from './pages/role/role.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { AutorizacaoComponent } from './pages/autorizacao/autorizacao.component';
+import { FuncionalidadeComponent } from './pages/funcionalidade/funcionalidade.component';
 
 const routes: Routes = [
   // {
