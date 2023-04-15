@@ -20,7 +20,11 @@ Trabalho referente à matéria "Gerência de Projetos" do Instituto Federal Flum
 ```
 cd server
 ```
-##### 2) Executar o projeto
+##### 2) Instalar as dependências do projeto
+```
+npm install
+```
+##### 3) Executar o projeto
 ```
 node index.js
 ```
@@ -31,12 +35,10 @@ node index.js
 ```
 cd frontend
 ```
-
 ##### 2) Instalar as dependências do projeto
 ```
 npm install
 ```
-
 ##### 3) Executar o projeto
 ```
 ng serve -o
