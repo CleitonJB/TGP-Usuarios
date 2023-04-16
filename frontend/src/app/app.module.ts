@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -42,6 +43,7 @@ import { FuncionalidadeComponent } from './pages/funcionalidade/funcionalidade.c
     MatIconModule,
     MatSidenavModule,
     MatSelectModule,
+    MatTableModule,
     BrowserAnimationsModule,
     NgbModule
   ],
