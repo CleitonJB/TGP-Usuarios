@@ -11,6 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
+import { RoleToStringPipe } from './shared/pipes/role-to-string/role-to-string.pipe';
+
 import { AppComponent } from './app.component';
 import { RoleComponent } from './pages/role/role.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -28,6 +30,7 @@ import { FuncionalidadeComponent } from './pages/funcionalidade/funcionalidade.c
     AutorizacaoComponent,
     LoginComponent,
     RegisterComponent,
+    RoleToStringPipe,
   ],
   imports: [
     BrowserModule,

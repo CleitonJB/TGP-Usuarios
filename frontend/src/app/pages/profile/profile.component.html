@@ -1,6 +1,6 @@
 <div class="profile-page">
-    <form [formGroup]="formGroup">
-        <h2>Role: {{ currentUser.role }}</h2><br><br>
+    <form *ngIf="currentUser != null" [formGroup]="formGroup">
+        <h2>Role: {{ currentUser.role | roleToString }}</h2><br><br>
         <div class="row g-3">
             <div class="col">
                 <label class="form-label">Nome</label>
