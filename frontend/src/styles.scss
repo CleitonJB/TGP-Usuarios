@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
 html, body { 
     height: 100%; 
 }
@@ -8,5 +11,25 @@ body {
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif; 
 }
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+
+//! GLOBAL STYLES TO PAGES
+
+//* Remode default padding of first cell
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding-left: 0 !important;
+}
+
+h1.page-title {
+    font-size: 5em;
+    line-height: 2em;
+}
+
+.actions-column {
+    width: 15%;
+    max-width: 15%;
+    min-width: 15%;
+
+    button:first-of-type {
+        margin-right: 0.5rem;
+    }
+}
