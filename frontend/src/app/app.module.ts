@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
@@ -23,6 +24,11 @@ import { RegisterComponent } from './pages/register/register.component';
 import { AutorizacaoComponent } from './pages/autorizacao/autorizacao.component';
 import { FuncionalidadeComponent } from './pages/funcionalidade/funcionalidade.component';
 
+import { RoleDetailComponent } from './pages/role/role-detail/role-detail.component';
+import { UserDetailComponent } from './pages/profile/user-detail/user-detail.component';
+import { AutorizacaoDetailComponent } from './pages/autorizacao/autorizacao-detail/autorizacao-detail.component';
+import { FuncionalidadeDetailComponent } from './pages/funcionalidade/funcionalidade-detail/funcionalidade-detail.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +39,10 @@ import { FuncionalidadeComponent } from './pages/funcionalidade/funcionalidade.c
     LoginComponent,
     RegisterComponent,
     RoleToStringPipe,
+    RoleDetailComponent,
+    UserDetailComponent,
+    AutorizacaoDetailComponent,
+    FuncionalidadeDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +54,7 @@ import { FuncionalidadeComponent } from './pages/funcionalidade/funcionalidade.c
     MatSidenavModule,
     MatSelectModule,
     MatTableModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     NgbModule
   ],
