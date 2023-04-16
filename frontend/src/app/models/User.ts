@@ -1,9 +1,9 @@
-import { Role } from "./Role";
+import { RolesID } from "./Role";
 
 export interface User {
     id?: string;
     name: string;
     email?: string;
     password: string;
-    role?: Role;
+    role?: RolesID;
 }

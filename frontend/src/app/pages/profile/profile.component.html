@@ -1,41 +1,66 @@
 <div class="profile-page">
     <form *ngIf="currentUser != null" [formGroup]="formGroup">
-        <h2>Role: {{ currentUser.role | roleToString }}</h2><br><br>
-        <div class="row g-3">
+        <!-- <h2>Role: {{ currentUser.role | roleToString }}</h2><br><br> -->
+        <!--* Linha 1 -->
+        <div class="row pb-2">
+            <!--* Role -->
+            <div class="col-2">
+                <mat-form-field appearance="outline">
+                    <mat-label>Role</mat-label>
+                    <mat-select [disabled]="currentUser.role != ROLES.Gerente && currentUser.role != ROLES.Diretor" formControlName="role">
+                      <mat-option *ngFor="let role of roles_options" [value]="role.value">
+                        {{ role.label }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+        </div>
+
+        <!--* Linha 2 -->
+        <div class="row pb-2">
+            <!--* Name -->
             <div class="col">
                 <label class="form-label">Nome</label>
                 <input type="text" class="form-control" formControlName="name">
             </div>
+            <!--* Full name -->
             <div class="col">
                 <label class="form-label">Nome completo</label>
                 <input type="text" class="form-control" formControlName="namefull">
             </div>
         </div>
-        <br>
-        <div class="row g-3">
+        
+        <!--* Linha 3 -->
+        <div class="row pb-2">
+            <!--* Password -->
             <div class="col">
                     <label class="form-label">Senha</label>
                     <input type="password" class="form-control" formControlName="password">
             </div>
+            <!--* Email -->
             <div class="col">
                 <label class="form-label">Email</label>
                 <input type="email" class="form-control" formControlName="email">
             </div>
         </div>
-        <br>
-        <div class="row g-3">
+        
+        <!--* Linha 4 -->
+        <div class="row pb-2">
+            <!--* Cellphone -->
             <div class="col-6">
                 <label class="form-label">Telefone</label>
                 <input type="text" class="form-control" formControlName="cellphone">
             </div>
+            <!--* BTN - Reset passoword -->
             <div class="col-3">
-                <button type="button" (click)="updateUser()" class="btn btn-primary" style="background-color: #5BC6DD;">
+                <button [disabled]="formGroup.invalid" type="button" (click)="updateUser()" class="btn btn-primary" style="background-color: #5BC6DD;">
                     <mat-icon>edit</mat-icon>
                     <span>Redefinir senha</span>
                 </button>
             </div>
+            <!--* BTN - Delete user -->
             <div class="col-3">
-                <button type="button" (click)="deleteUser()" class="btn btn-primary" style="background-color: #DD5B5B;">
+                <button [disabled]="formGroup.invalid" type="button" (click)="deleteUser()" class="btn btn-primary" style="background-color: #DD5B5B;">
                     <mat-icon>delete</mat-icon>
                     <span>Excluir conta</span>
                 </button>

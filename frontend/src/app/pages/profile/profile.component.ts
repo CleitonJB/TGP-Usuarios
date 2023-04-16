@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { User } from 'src/app/models/User';
 import { RequestResponseVM } from 'src/app/models/ResponseRequestVM';
+import { RolesID, RolesString } from 'src/app/models/Role';
 
 import { UserService } from 'src/app/core/services/user/user.service';
 import { ProfileService } from './profile.service';
@@ -15,6 +16,30 @@ import { ProfileService } from './profile.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+
+  public ROLES = RolesID;
+  public roles_options: any[] = [
+    {
+      label: RolesString[1],
+      value: RolesID.Novato
+    },
+    {
+      label: RolesString[2],
+      value: RolesID.Estagiario
+    },
+    {
+      label: RolesString[3],
+      value: RolesID.Desenvolvedor
+    },
+    {
+      label: RolesString[4],
+      value: RolesID.Gerente
+    },
+    {
+      label: RolesString[5],
+      value: RolesID.Diretor
+    }
+  ];
 
   public currentUser!: User | null;
   private userSubscription: Subscription | null = null;
@@ -39,11 +64,11 @@ export class ProfileComponent implements OnInit {
   private setInitialForm(): void {
     this.formGroup = new FormGroup({
       id:        new FormControl(null),
-      name:      new FormControl(null),
+      name:      new FormControl(null, Validators.required),
       namefull:  new FormControl({ value: null, disabled: true}),
-      email:     new FormControl(null),
-      password:  new FormControl(null),
-      role:      new FormControl(null),
+      email:     new FormControl(null, Validators.required),
+      password:  new FormControl(null, Validators.required),
+      role:      new FormControl(null, Validators.required),
       cellphone: new FormControl({ value: null, disabled: true}),
     });
   }
