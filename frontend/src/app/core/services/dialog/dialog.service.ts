@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
 
 import { DetailData } from 'src/app/models/DetailVM';
 
@@ -7,7 +8,6 @@ import { UserDetailComponent } from 'src/app/pages/profile/user-detail/user-deta
 import { RoleDetailComponent } from 'src/app/pages/role/role-detail/role-detail.component';
 import { AutorizacaoDetailComponent } from 'src/app/pages/autorizacao/autorizacao-detail/autorizacao-detail.component';
 import { FuncionalidadeDetailComponent } from 'src/app/pages/funcionalidade/funcionalidade-detail/funcionalidade-detail.component';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
