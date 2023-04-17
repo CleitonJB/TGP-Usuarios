@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
+import { User } from 'src/app/models/User';
 import { DetailMode } from 'src/app/models/DetailVM';
 import { Role, RolesID } from '../../models/Role';
 import { RequestResponseVM } from 'src/app/models/ResponseRequestVM';
 
-import { User } from 'src/app/models/User';
 import { RoleService } from './role.service';
 import { UserService } from 'src/app/core/services/user/user.service';
 import { DialogService } from 'src/app/core/services/dialog/dialog.service';
