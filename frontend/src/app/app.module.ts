@@ -17,13 +17,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { RoleToStringPipe } from './shared/pipes/role-to-string/role-to-string.pipe';
 
 import { AppComponent } from './app.component';
+import { UserComponent } from './pages/user/user.component';
 import { RoleComponent } from './pages/role/role.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AutorizacaoComponent } from './pages/autorizacao/autorizacao.component';
 import { FuncionalidadeComponent } from './pages/funcionalidade/funcionalidade.component';
-
+//
 import { RoleDetailComponent } from './pages/role/role-detail/role-detail.component';
 import { UserDetailComponent } from './pages/profile/user-detail/user-detail.component';
 import { AutorizacaoDetailComponent } from './pages/autorizacao/autorizacao-detail/autorizacao-detail.component';
@@ -43,6 +44,7 @@ import { FuncionalidadeDetailComponent } from './pages/funcionalidade/funcionali
     UserDetailComponent,
     AutorizacaoDetailComponent,
     FuncionalidadeDetailComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

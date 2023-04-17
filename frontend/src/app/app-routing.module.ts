@@ -5,6 +5,7 @@ import { AuthGuard } from './core/guards/auth/auth.guard';
 import { LoginGuard } from './pages/login/guard/login.guard';
 
 import { RoleComponent } from './pages/role/role.component';
+import { UserComponent } from './pages/user/user.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -34,6 +35,11 @@ const routes: Routes = [
     path: 'profile',
     canActivate: [AuthGuard],
     component: ProfileComponent
+  },
+  {
+    path: 'user',
+    canActivate: [AuthGuard],
+    component: UserComponent
   },
   {
     path: 'role',
