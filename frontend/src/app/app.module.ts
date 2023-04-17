@@ -26,7 +26,7 @@ import { AutorizacaoComponent } from './pages/autorizacao/autorizacao.component'
 import { FuncionalidadeComponent } from './pages/funcionalidade/funcionalidade.component';
 //
 import { RoleDetailComponent } from './pages/role/role-detail/role-detail.component';
-import { UserDetailComponent } from './pages/profile/user-detail/user-detail.component';
+import { UserDetailComponent } from './pages/user/user-detail/user-detail.component';
 import { AutorizacaoDetailComponent } from './pages/autorizacao/autorizacao-detail/autorizacao-detail.component';
 import { FuncionalidadeDetailComponent } from './pages/funcionalidade/funcionalidade-detail/funcionalidade-detail.component';
 

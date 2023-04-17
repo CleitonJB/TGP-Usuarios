@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -20,6 +20,18 @@ export class UsersService {
 
   public get(bodyParams: Partial<User>): Observable<any> {
     const url: string = `${this.BASE_URL}/login`;
+
+    return this.http.post<RequestResponseVM>(url, bodyParams);
+  }
+
+  public getAll(): Observable<any> {
+    const url: string = `${this.BASE_URL}/getAll`;
+
+    return this.http.get<RequestResponseVM>(url);
+  }
+
+  public create(bodyParams: User): Observable<any> {
+    const url: string = `${this.BASE_URL}/register`;
 
     return this.http.post<RequestResponseVM>(url, bodyParams);
   }

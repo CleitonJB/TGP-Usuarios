@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { DetailData } from 'src/app/models/DetailVM';
 
-import { UserDetailComponent } from 'src/app/pages/profile/user-detail/user-detail.component';
+import { UserDetailComponent } from 'src/app/pages/user/user-detail/user-detail.component';
 import { RoleDetailComponent } from 'src/app/pages/role/role-detail/role-detail.component';
 import { AutorizacaoDetailComponent } from 'src/app/pages/autorizacao/autorizacao-detail/autorizacao-detail.component';
 import { FuncionalidadeDetailComponent } from 'src/app/pages/funcionalidade/funcionalidade-detail/funcionalidade-detail.component';

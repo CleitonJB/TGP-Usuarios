@@ -1,1 +1,67 @@
-<p>user works!</p>
+<div id="user-page">
+    <!--* Title -->
+    <h1 class="text-center page-title">Listagem de Usuários</h1>
+
+    <!--* Table -->
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+            <th class="text-center actions-column" mat-header-cell *matHeaderCellDef>
+                <!--* BTN - Add -->
+                <button [disabled]="currentUser?.role != ROLES.Gerente && currentUser?.role != ROLES.Diretor" type="button" (click)="onAddUser()" mat-icon-button>
+                    <mat-icon>add</mat-icon>
+                </button>
+            </th>
+            <td class="text-center actions-column" mat-cell *matCellDef="let element">
+                <!--* BTN - Edit -->
+                <button [disabled]="currentUser?.role != ROLES.Gerente && currentUser?.role != ROLES.Diretor" type="button" (click)="onEditUser(element)" mat-icon-button>
+                    <mat-icon>edit</mat-icon>
+                </button>
+
+                <!--* BTN - Delete -->
+                <button [disabled]="currentUser?.role != ROLES.Gerente && currentUser?.role != ROLES.Diretor" type="button" (click)="onDeleteUser(element)" mat-icon-button>
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+    
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Nome </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <!-- Password Column -->
+        <ng-container matColumnDef="password">
+            <th mat-header-cell *matHeaderCellDef> Senha </th>
+            <td mat-cell *matCellDef="let element"> {{element.password}} </td>
+        </ng-container>
+
+        <!-- Role Column -->
+        <ng-container matColumnDef="role">
+            <th mat-header-cell *matHeaderCellDef> Role </th>
+            <td mat-cell *matCellDef="let element"> {{element.role | roleToString}} </td>
+        </ng-container>
+
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell text-center" [attr.colspan]="displayedColumns.length">
+                <span>Não há <b>usuários</b> para serem listados!</span>
+            </td>
+        </tr>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
