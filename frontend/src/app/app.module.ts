@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -52,6 +53,7 @@ import { FuncionalidadeDetailComponent } from './pages/funcionalidade/funcionali
     HttpClientModule,
     ReactiveFormsModule,
     MatToolbarModule,
+    MatButtonModule,
     MatIconModule,
     MatSidenavModule,
     MatSelectModule,
