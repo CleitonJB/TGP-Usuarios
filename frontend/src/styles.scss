@@ -3,13 +3,16 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
+* {
+    font-family: 'Italianno', cursive;
+}
+
 html, body { 
     height: 100%; 
 }
 
 body { 
-    margin: 0; 
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    margin: 0;
 }
 
 //! GLOBAL STYLES TO PAGES
@@ -21,6 +24,7 @@ th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:
 
 h1.page-title {
     font-size: 5em;
+    font-family: 'Italianno', cursive;
     line-height: 2em;
 }
 
