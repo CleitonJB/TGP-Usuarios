@@ -8,7 +8,7 @@ import { RequestResponseVM } from 'src/app/models/ResponseRequestVM';
 import { RolesID, RolesString } from 'src/app/models/Role';
 
 import { UserService } from 'src/app/core/services/user/user.service';
-import { ProfileService } from './profile.service';
+import { UsersService } from '../user/users.service';
 
 @Component({
   selector: 'app-profile',
@@ -49,7 +49,7 @@ export class ProfileComponent implements OnInit {
   constructor(
     private router: Router,
     private userService: UserService,
-    private profileService: ProfileService
+    private usersService: UsersService
   ) { }
 
   ngOnInit(): void {
@@ -83,28 +83,10 @@ export class ProfileComponent implements OnInit {
         console.error("Erro ao obter os dados do usuário: ", error);
       }
     });
-    // const user: User = Object.assign({}, JSON.parse(localStorage.getItem('user') as string));
-    // delete user.id;
-    // delete user.email;
-    // delete user.role;
-
-    // this.profileService.get(user).subscribe({
-    //   next: (userData: RequestResponseVM) => {
-    //     console.warn(userData);
-    //     alert(userData.message);
-    //     this.currentUser = userData.data;
-    //     this.formGroup.patchValue(userData.data);
-    //   },
-    //   error: (error: any) => {
-    //     console.warn(error);
-    //     alert(error.error.message);
-    //     console.error("Erro ao buscar dados do usuário: ", error);
-    //   }
-    // });
   }
 
   public updateUser(): void {
-    this.profileService.update(this.formGroup.getRawValue()).subscribe({
+    this.usersService.update(this.formGroup.getRawValue()).subscribe({
       next: (userData: RequestResponseVM) => {
         alert(userData.message);
         this.formGroup.patchValue(userData);
@@ -118,7 +100,7 @@ export class ProfileComponent implements OnInit {
   }
 
   public deleteUser(): void {
-    this.profileService.delete(this.formGroup.getRawValue().id).subscribe({
+    this.usersService.delete(this.formGroup.getRawValue().id).subscribe({
       next: (userData: RequestResponseVM) => {
         alert(userData.message);
         this.userService.removeGlobalUser();

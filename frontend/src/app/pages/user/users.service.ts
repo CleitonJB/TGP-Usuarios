@@ -10,7 +10,7 @@ import { RequestResponseVM } from 'src/app/models/ResponseRequestVM';
 @Injectable({
   providedIn: 'root'
 })
-export class ProfileService {
+export class UsersService {
 
   private readonly BASE_URL: string = `${environment.server_url}/user`;
 
