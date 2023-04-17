@@ -1,0 +1,38 @@
+<form [formGroup]="formGroup">
+    <!--* Linha 1 -->
+    <div class="row pb-2">
+        <!--* ID -->
+        <div class="col-2 pr-0">
+            <label class="form-label">ID</label>
+            <input type="number" class="form-control" formControlName="id">
+        </div>
+
+        <!--* Role -->
+        <div class="col-5 pr-0">
+            <label class="form-label">Role</label>
+            <input type="number" class="form-control" formControlName="role">
+        </div>
+
+        <!--* Funcionalidade -->
+        <div class="col-5">
+            <label class="form-label">Funcionalidade</label>
+            <input type="number" class="form-control" formControlName="funcionalidade">
+        </div>
+    </div>
+
+    <!--* Linha 2 -->
+    <div class="row justify-content-center">
+        <!--* BTN - Confirm -->
+        <div class="col-3">
+            <button [disabled]="formGroup.invalid" type="button" (click)="onSubmit()" class="btn btn-primary btn-confirm">
+                <span>Confirmar</span>
+            </button>
+        </div>
+        <!--* BTN - Cancel -->
+        <div class="col-3">
+            <button type="button" (click)="onClose()" class="btn btn-primary btn-cancel">
+                <span>Cancelar</span>
+            </button>
+        </div>
+    </div>
+</form>
