@@ -20,7 +20,7 @@ export class AutorizacaoDetailComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<AutorizacaoDetailComponent>,
     private autorizacaoService: AutorizacaoService,
-    @Inject(MAT_DIALOG_DATA) public detailData: DetailData,
+    @Inject(MAT_DIALOG_DATA) private detailData: DetailData,
   ) { }
 
   ngOnInit(): void {

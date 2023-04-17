@@ -20,7 +20,7 @@ export class RoleDetailComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<RoleDetailComponent>,
     private roleService: RoleService,
-    @Inject(MAT_DIALOG_DATA) public detailData: DetailData,
+    @Inject(MAT_DIALOG_DATA) private detailData: DetailData,
   ) { }
 
   ngOnInit(): void {

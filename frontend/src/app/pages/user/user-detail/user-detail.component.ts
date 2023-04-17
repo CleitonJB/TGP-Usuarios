@@ -19,7 +19,7 @@ export class UserDetailComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<UserDetailComponent>,
     private usersService: UsersService,
-    @Inject(MAT_DIALOG_DATA) public detailData: DetailData,
+    @Inject(MAT_DIALOG_DATA) private detailData: DetailData,
   ) { }
 
   ngOnInit(): void {
