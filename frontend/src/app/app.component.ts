@@ -12,6 +12,8 @@ import { UserService } from './core/services/user/user.service';
 })
 export class AppComponent {
 
+  public periodMessage: string | null = null;
+
   public showFiller: boolean = false;
   public currentUser!: User | null;
 
@@ -35,11 +37,24 @@ export class AppComponent {
       next: (userData: User | null) => {
         console.log("Usuário atualizado: ", userData);
         this.currentUser = userData;
+        this.periodMessage = this.getTimePeriod();
       },
       error: (error: any) => {
         console.error("Erro ao obter usuário atual: ", error);
       }
     });
+  }
+
+  private getTimePeriod(): string {
+    const hours: number = new Date().getHours();
+
+    if(hours >= 0 && hours <= 11) {
+      return 'Bom dia';
+    } else if(hours >= 12 && hours < 18) {
+      return 'Boa tarde';
+    } else { //if(hours >= 18)
+      return 'Boa noite';
+    }
   }
 
   public logout(): void {
