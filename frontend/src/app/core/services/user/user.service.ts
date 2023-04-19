@@ -45,6 +45,10 @@ export class UserService {
     return this.$currentUser;
   }
 
+  public getUserValue(): User | null {
+    return new BehaviorSubject<User | null>(this.$currentUser.value).value;
+  }
+
   public removeUser(): void {
     this.$currentUser.next(null);
   }

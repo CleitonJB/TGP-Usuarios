@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -16,6 +16,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { RoleToStringPipe } from './shared/pipes/role-to-string/role-to-string.pipe';
+
+import { AuthInterceptor } from './core/interceptors/auth/auth-interceptor';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './pages/user/user.component';
@@ -62,7 +64,9 @@ import { FuncionalidadeDetailComponent } from './pages/funcionalidade/funcionali
     BrowserAnimationsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
