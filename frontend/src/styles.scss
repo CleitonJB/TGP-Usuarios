@@ -3,8 +3,9 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
-* {
-    font-family: 'Italianno', cursive;
+p, span, h1, h2, h3, a, label {
+    font-family: 'Italianno', cursive !important;
+    letter-spacing: 1.2px;
 }
 
 html, body { 
@@ -17,14 +18,71 @@ body {
 
 //! GLOBAL STYLES TO PAGES
 
+a {
+    color: var(--tgp_text_opaque);
+    font-size: 1.5rem;
+
+    line-height: 3rem;
+}
+
+label {
+    font-size: 1.2rem;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    table {
+        width: 80%;
+
+        thead {
+            background-color: var(--tgp_table_header);
+            
+            // th, td {
+            //     font-size: 1.4rem;
+            //     line-height: 2rem;
+            // }
+
+            th {
+                color: var(--tgp_text_light);
+            }
+        }
+
+        tbody {
+            // th, td {
+            //     font-size: 2rem;
+            //     line-height: 2rem;
+            // }
+
+            tr {
+                color: var(--tgp_text_dark);
+            }
+
+            tr:nth-child(odd) {
+                background-color: var(--tgp_table_row_odd);
+            }
+
+            tr:nth-child(even) {
+                background-color: var(--tgp_table_row_even);
+            }
+        }
+    }
+}
+
+//* PAGES
+#user-page, #role-page, #funcionalidade-page, #autorizacao-page {
+    padding: 2rem;
+}
+
 //* Remode default padding of first cell
 th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
     padding-left: 0 !important;
 }
 
 h1.page-title {
-    font-size: 5em;
-    font-family: 'Italianno', cursive;
+    font-size: 6em;
     line-height: 2em;
 }
 
@@ -38,11 +96,63 @@ h1.page-title {
     }
 }
 
-//* CRUD buttons
-.btn-confirm {
-    background-color: #5BC6DD;
+.form-control.rounded-field {
+    border-radius: 50px;
+}
+
+//* Buttons
+.crud-container-buttons {
+    margin-top: 1rem;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+
+    button {
+        width: 110px;
+        min-width: 110px;
+        max-width: 110px;
+
+        font-size: 1.5em;
+    }
+}
+
+.btn-rounded {
+    border: none;
+    border-radius: 50px;
+}
+
+.btn-confirm, .btn-login, .btn-register, .btn-edit {
+    background-color: var(--tgp_primary_light);
+    color: var(--tgp_text_light);
 }
 
 .btn-cancel {
-    background-color: #DD5B5B;
+    background-color: var(--tgp_danger_light);
+    color: var(--tgp_text_light);
+}
+
+.btn-login, .btn-register {
+    width: 100%;
+
+    font-weight: 100;
+    font-size: 2em;
+    line-height: 2em;
+}
+
+//* App colors
+:root {
+    --tgp_primary_light: #5BC6DD;
+    --tgp_primary_dark: #4696A8;
+    --tgp_danger_light: #DD5B5B;
+    --tgp_danger_dark: #a74444;
+    --tgp_text_light: #ffffff;
+    --tgp_text_dark: #000000;
+    --tgp_text_opaque: #00000094;
+    --tgp_table_header: #000000;
+    --tgp_table_row_odd: #ffffff;
+    --tgp_table_row_even: #cfcfcf;
 }

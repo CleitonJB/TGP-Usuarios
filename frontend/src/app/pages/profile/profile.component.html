@@ -21,12 +21,12 @@
             <!--* Name -->
             <div class="col">
                 <label class="form-label">Nome</label>
-                <input type="text" class="form-control" formControlName="name">
+                <input type="text" class="form-control rounded-field" formControlName="name">
             </div>
             <!--* Full name -->
             <div class="col">
                 <label class="form-label">Nome completo</label>
-                <input type="text" class="form-control" formControlName="namefull">
+                <input type="text" class="form-control rounded-field" formControlName="namefull">
             </div>
         </div>
         
@@ -35,12 +35,12 @@
             <!--* Password -->
             <div class="col">
                     <label class="form-label">Senha</label>
-                    <input type="password" class="form-control" formControlName="password">
+                    <input type="password" class="form-control rounded-field" formControlName="password">
             </div>
             <!--* Email -->
             <div class="col">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-control" formControlName="email">
+                <input type="email" class="form-control rounded-field" formControlName="email">
             </div>
         </div>
         
@@ -49,18 +49,18 @@
             <!--* Cellphone -->
             <div class="col-6">
                 <label class="form-label">Telefone</label>
-                <input type="text" class="form-control" formControlName="cellphone">
+                <input type="text" class="form-control rounded-field" formControlName="cellphone">
             </div>
             <!--* BTN - Reset passoword -->
             <div class="col-3">
-                <button [disabled]="formGroup.invalid" type="button" (click)="updateUser()" class="btn btn-primary" style="background-color: #5BC6DD;">
+                <button [disabled]="formGroup.invalid" type="button" (click)="updateUser()" class="btn btn-edit btn-rounded">
                     <mat-icon>edit</mat-icon>
                     <span>Redefinir senha</span>
                 </button>
             </div>
             <!--* BTN - Delete user -->
             <div class="col-3">
-                <button [disabled]="formGroup.invalid" type="button" (click)="deleteUser()" class="btn btn-primary" style="background-color: #DD5B5B;">
+                <button [disabled]="formGroup.invalid" type="button" (click)="deleteUser()" class="btn btn-cancel btn-rounded align-bottom">
                     <mat-icon>delete</mat-icon>
                     <span>Excluir conta</span>
                 </button>

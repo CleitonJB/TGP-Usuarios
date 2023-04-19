@@ -4,27 +4,27 @@
         <!--* ID -->
         <div class="col-2 pr-0">
             <label class="form-label">ID</label>
-            <input type="text" class="form-control" formControlName="id">
+            <input type="text" class="form-control rounded-field" formControlName="id">
         </div>
 
         <!--* Description -->
         <div class="col-10">
             <label class="form-label">Descrição</label>
-            <input type="text" class="form-control" formControlName="description">
+            <input type="text" class="form-control rounded-field" formControlName="description">
         </div>
     </div>
 
     <!--* Linha 2 -->
-    <div class="row justify-content-center">
+    <div class="row crud-container-buttons">
         <!--* BTN - Confirm -->
         <div class="col-3">
-            <button [disabled]="formGroup.invalid" type="button" (click)="onSubmit()" class="btn btn-primary btn-confirm">
+            <button [disabled]="formGroup.invalid" type="button" (click)="onSubmit()" class="btn btn-confirm btn-rounded">
                 <span>Confirmar</span>
             </button>
         </div>
         <!--* BTN - Cancel -->
         <div class="col-3">
-            <button type="button" (click)="onClose()" class="btn btn-primary btn-cancel">
+            <button type="button" (click)="onClose()" class="btn btn-cancel btn-rounded">
                 <span>Cancelar</span>
             </button>
         </div>

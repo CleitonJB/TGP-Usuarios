@@ -1,4 +1,4 @@
-<div id="funcionalidade-page">
+<div class="page-container" id="funcionalidade-page">
     <!--* Title -->
     <h1 class="text-center page-title">Listagem de Funcionalidades</h1>
 
@@ -15,12 +15,12 @@
             <td class="text-center actions-column" mat-cell *matCellDef="let element">
                 <!--* BTN - Edit -->
                 <button [disabled]="currentUser?.role != ROLES.Gerente && currentUser?.role != ROLES.Diretor" type="button" (click)="onEditFuncionalidade(element)" mat-icon-button>
-                    <mat-icon>edit</mat-icon>
+                    <mat-icon color="accent">edit</mat-icon>
                 </button>
 
                 <!--* BTN - Delete -->
                 <button [disabled]="currentUser?.role != ROLES.Gerente && currentUser?.role != ROLES.Diretor" type="button" (click)="onDeleteFuncionalidade(element)" mat-icon-button>
-                    <mat-icon>delete</mat-icon>
+                    <mat-icon color="warn">delete</mat-icon>
                 </button>
             </td>
         </ng-container>

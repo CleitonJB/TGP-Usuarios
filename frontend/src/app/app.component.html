@@ -4,13 +4,13 @@
     <button [disabled]="currentUser == null" (click)="drawer.toggle()" mat-icon-button aria-label="Menu icon">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>TGP</span>
+    <span id="toolbar-title">TGP</span>
 
     <!--* Espaçamento -->
     <span class="example-spacer"></span>
     
     <!--* Cumprimento -->
-    <span *ngIf="currentUser != null">{{ periodMessage }}, {{ currentUser.name }}!</span>
+    <span id="time-period-message" *ngIf="currentUser != null">{{ periodMessage }}, {{ currentUser.name }}!</span>
 
     <!--* Espaçamento -->
     <span class="example-spacer"></span>
