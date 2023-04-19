@@ -31,25 +31,25 @@
       </button>
 
       <!--* Users -->
-      <button (click)="navigateTo('/user')" class="menu-item" aria-label="Users icon">
+      <button *ngIf="currentUser?.role == ROLES.Diretor || currentUser?.role == ROLES.Gerente" (click)="navigateTo('/user')" class="menu-item" aria-label="Users icon">
         <mat-icon>groups</mat-icon>
         <span>Usuários</span>
       </button>
 
       <!--* Roles -->
-      <button (click)="navigateTo('/role')" class="menu-item" aria-label="Role icon">
+      <button *ngIf="currentUser?.role == ROLES.Diretor || currentUser?.role == ROLES.Gerente" (click)="navigateTo('/role')" class="menu-item" aria-label="Role icon">
         <mat-icon>psychology</mat-icon>
         <span>Roles</span>
       </button>
 
       <!--* Funcionalidades -->
-      <button (click)="navigateTo('/funcionalidade')" class="menu-item" aria-label="Funcionalidades icon">
+      <button *ngIf="currentUser?.role == ROLES.Diretor || currentUser?.role == ROLES.Gerente" (click)="navigateTo('/funcionalidade')" class="menu-item" aria-label="Funcionalidades icon">
         <mat-icon>account_tree</mat-icon>
         <span>Funcionalidades</span>
       </button>
 
       <!--* Autorizações -->
-      <button (click)="navigateTo('/autorizacao')" class="menu-item" aria-label="Autorizações icon">
+      <button *ngIf="currentUser?.role == ROLES.Diretor || currentUser?.role == ROLES.Gerente" (click)="navigateTo('/autorizacao')" class="menu-item" aria-label="Autorizações icon">
         <mat-icon>flag</mat-icon>
         <span>Autorizações</span>
       </button>

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { User } from './models/User';
+import { RolesID } from './models/Role';
+
 import { UserService } from './core/services/user/user.service';
 
 @Component({
@@ -11,6 +13,8 @@ import { UserService } from './core/services/user/user.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  public ROLES = RolesID;
 
   public periodMessage: string | null = null;
 

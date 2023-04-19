@@ -10,7 +10,7 @@ import { LocalStorageService } from '../local-storage/local-storage.service';
 })
 export class UserService {
 
-  private $currentUser: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null);
+  private $currentUser: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(this.localStorageService.getUser());
 
   constructor(
     private localStorageService: LocalStorageService
