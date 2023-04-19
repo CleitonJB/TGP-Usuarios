@@ -9,12 +9,19 @@ Trabalho referente à matéria "Gerência de Projetos" do Instituto Federal Flum
 | Lucas Rocha Rangel      | https://github.com/Lucsesen  |
 
 ## Diretórios
-| Pasta         | Descrição                                                     |
-|---------------|---------------------------------------------------------------|
-| **/server**   | Pasta para as APIs do projeto **TGP - Usuários**              |
-| **/frontend** | Pasta para a aplicação frontend do projeto **TGP - Usuários** |
+| Pasta         | Descrição                                                 |
+|---------------|-----------------------------------------------------------|
+| **/server**   | Pasta das APIs (servidor) do projeto **TGP - Usuários**   |
+| **/frontend** | Pasta da aplicação frontend do projeto **TGP - Usuários** |
 
 ## Executar projeto - Backend
+
+Tecnologias utilizadas no projeto:
+| Tecnologia   | Uso                                                        |
+|:------------:|:-----------------------------------------------------------|
+| **NodeJS**   | Servidor do projeto                                        |
+| **Mongoose** | Biblioteca para a conexão do servidor com o banco de dados |
+| **MongoDB**  | Banco de dados em nuvem do projeto                         |
 
 ##### 1) Entrar na pasta do projeto
 ```
@@ -30,6 +37,12 @@ node index.js
 ```
 
 ## Executar projeto - Frontend
+
+Tecnologias utilizadas no projeto:
+| Tecnologia    | Uso                                                            |
+|:-------------:|:---------------------------------------------------------------|
+| **Angular**   | Framework principal de componentes visuais e lógica do projeto |
+| **Bootstrap** | Framework para estilização dos componentes visuais             |
 
 ##### 1) Entrar na pasta do projeto
 ```
